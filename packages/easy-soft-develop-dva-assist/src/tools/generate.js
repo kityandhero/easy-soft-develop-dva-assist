@@ -116,8 +116,8 @@ function adjustSource(o) {
 
 /**
  * generate
- * @param {*} dataSource dataSource
- * @param {*} relativeFolder relativeFolder
+ * @param {*} dataSource data source
+ * @param {*} relativeFolder relative folder
  */
 function generate(dataSource, relativeFolder) {
   mkdirSync(`${relativeFolder}/modelBuilders`, {
