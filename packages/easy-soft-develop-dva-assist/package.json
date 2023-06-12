@@ -2,10 +2,23 @@
   "name": "easy-soft-develop-dva-assist",
   "version": "1.0.0",
   "author": "",
+  "main": "src/index.js",
+  "types": "types/index.d.ts",
+  "bin": {
+    "easy-soft-develop-dva-assist": "./bin/cli.js"
+  },
+  "directories": {
+    "src": "src",
+    "types": "types"
+  },
+  "files": [
+    "src/",
+    "types/"
+  ],
   "scripts": {
     "precommit": "npm run z:lint:staged:quiet",
     "test:bin:create-model": "node ./bin/cli.js create-model --dataPath ./generateConfig/model.json --relativeFolder ./other/generateResult",
-    "z:auto:adjust:file": "echo can exec some file adjust command with here",
+    "z:auto:adjust:file": "npm run z:tsc:build",
     "prez:documentation:generate": "npx rimraf ./docs && npm run z:documentation:lint",
     "z:documentation:generate": "npx documentation build src/** -f html --github -o docs",
     "z:documentation:lint": "npx documentation lint src/**",

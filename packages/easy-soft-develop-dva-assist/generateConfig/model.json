@@ -1,7 +1,7 @@
 {
   "list": [
     {
-      "name": "test",
+      "name": "simple",
       "apis": [
         {
           "effect": "pageList",

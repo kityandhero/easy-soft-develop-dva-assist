@@ -128,8 +128,6 @@ function generate(dataSource, relativeFolder) {
     execList: [],
   };
 
-  let hasModel = false;
-
   for (const one of dataAdjust) {
     const o = adjustSource(one);
 
@@ -165,21 +163,15 @@ function generate(dataSource, relativeFolder) {
       functionAlias: `build${toUpperFirst(o.defineName)}Model`,
     });
     modelIndex.execList.push(`build${toUpperFirst(o.defineName)}Model`);
-
-    hasModel = true;
   }
 
   let modelIndexContent = compile(templateModelIndexContent)({ o: modelIndex });
 
-  if (hasModel) {
-    writeFileSync(
-      `${relativeFolder}/modelBuilders/index.js`,
-      modelIndexContent,
-      {
-        coverFile: true,
-      },
-    );
-  }
+  writeFileSync(`${relativeFolder}/modelBuilders/index.js`, modelIndexContent, {
+    coverFile: true,
+  });
+
+  promptSuccess(`Generate "${relativeFolder}/modelBuilders/index.js" complete`);
 }
 
 module.exports = {
