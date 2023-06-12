@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [1.0.16](https://github.com/kityandhero/easy-soft-develop-dva-assist/compare/easy-soft-develop-dva-assist@1.0.15...easy-soft-develop-dva-assist@1.0.16) (2023-06-12)
+
+### Bug Fixes
+
+- **easy-soft-develop-dva-assist:** update ([17bd464](https://github.com/kityandhero/easy-soft-develop-dva-assist/commit/17bd464d7e27c1f9804350aeebe4ab2057713a91))
+
 ### [1.0.15](https://github.com/kityandhero/easy-soft-develop-dva-assist/compare/easy-soft-develop-dva-assist@1.0.14...easy-soft-develop-dva-assist@1.0.15) (2023-06-12)
 
 ### Bug Fixes
