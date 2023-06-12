@@ -1,6 +1,6 @@
 {
   "name": "easy-soft-develop-dva-assist",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "author": "",
   "main": "src/index.js",
   "types": "types/index.d.ts",
