@@ -4,6 +4,7 @@
   "author": "",
   "scripts": {
     "precommit": "npm run z:lint:staged:quiet",
+    "test:bin:create-model": "node ./bin/cli.js create-model --dataPath ./generateConfig/model.json --relativeFolder ./other/generateResult",
     "z:auto:adjust:file": "echo can exec some file adjust command with here",
     "prez:documentation:generate": "npx rimraf ./docs && npm run z:documentation:lint",
     "z:documentation:generate": "npx documentation build src/** -f html --github -o docs",
@@ -32,7 +33,11 @@
     "z:test": "cross-env NODE_ENV=test jest",
     "z:tsc:build": "echo show tsc version and create declaration file && tsc -v && tsc -p ./tsconfig.types.json && echo declaration file generate complete"
   },
-  "dependencies": {},
+  "dependencies": {
+    "commander": "^10.0.1",
+    "ejs": "^3.1.9",
+    "rimraf": "^5.0.1"
+  },
   "devDependencies": {
     "@babel/core": "^7.22.1",
     "@babel/eslint-parser": "^7.21.8",

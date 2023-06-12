@@ -1,0 +1,187 @@
+/* eslint-disable no-undef */
+/* eslint-disable unicorn/prefer-module */
+/* eslint-disable no-useless-escape */
+
+const { compile } = require('ejs');
+const {
+  writeFileSync,
+  mkdirSync,
+  promptSuccess,
+  promptWarn,
+  promptEmptyLine,
+  isArray,
+  checkStringIsEmpty,
+} = require('easy-soft-develop');
+
+let {
+  templateModelContent,
+  templateServiceContent,
+  templateModelIndexContent,
+} = require('../template');
+
+function toLowerFirst(o) {
+  return `${o.charAt(0)}`.toLowerCase() + o.slice(1);
+}
+
+function toUpperFirst(o) {
+  return `${o.charAt(0)}`.toUpperCase() + o.slice(1);
+}
+
+function adjustSource(o) {
+  const d = { ...o };
+
+  const name = d.name;
+
+  if (name === undefined) {
+    promptWarn('data has error, check item: ');
+
+    console.log(d);
+
+    promptEmptyLine();
+
+    throw new Error('data has not key "name"');
+  }
+
+  const apis = d.apis;
+
+  if (apis === undefined || !isArray(apis)) {
+    promptWarn('data has error, check item: ');
+
+    console.log(d);
+
+    promptEmptyLine();
+
+    throw new Error('data has not key "apis" or not array');
+  }
+
+  const pretreatmentSet = new Set();
+  const serviceImportSet = new Set();
+
+  for (const one of apis) {
+    const serviceFunctionName = one.service;
+
+    if (checkStringIsEmpty(serviceFunctionName)) {
+      promptWarn('data has error, check item: ');
+
+      console.log(one);
+
+      promptEmptyLine();
+
+      throw new Error('data has not key "name" or value is empty');
+    }
+
+    serviceImportSet.add(serviceFunctionName);
+
+    let functionType = one.type;
+
+    if (checkStringIsEmpty(functionType)) {
+      promptWarn('data has error, check item: ');
+
+      console.log(one);
+
+      promptEmptyLine();
+
+      throw new Error('data has not key "type" or value is empty');
+    }
+
+    functionType = toLowerFirst(functionType);
+
+    if (functionType === 'singleList') {
+      pretreatmentSet.add('pretreatmentRemoteListData');
+
+      one.pretreatment = 'pretreatmentRemoteListData';
+    }
+
+    if (functionType === 'pageList') {
+      pretreatmentSet.add('pretreatmentRemotePageListData');
+
+      one.pretreatment = 'pretreatmentRemotePageListData';
+    }
+
+    if (functionType === 'singleData') {
+      pretreatmentSet.add('pretreatmentRemoteSingleData');
+
+      one.pretreatment = 'pretreatmentRemoteSingleData';
+    }
+  }
+
+  d.defineName = toLowerFirst(d.name);
+  d.pretreatmentList = [...pretreatmentSet];
+  d.serviceImportList = [...serviceImportSet];
+
+  return d;
+}
+
+function generate(dataSource, relativeFolder) {
+  mkdirSync(`${relativeFolder}/modelBuilders`, {
+    recursive: true,
+  });
+
+  mkdirSync(`${relativeFolder}/services`, {
+    recursive: true,
+  });
+
+  const dataAdjust = dataSource.map((o) => o);
+
+  const modelIndex = {
+    importList: [],
+    execList: [],
+  };
+
+  let hasModel = false;
+
+  for (const one of dataAdjust) {
+    const o = adjustSource(one);
+
+    let contentModel = compile(templateModelContent)({ o });
+    let contentService = compile(templateServiceContent)({ o });
+
+    writeFileSync(
+      `${relativeFolder}/modelBuilders/${o.defineName}.js`,
+      contentModel,
+      {
+        coverFile: o.cover || false,
+      },
+    );
+
+    promptSuccess(
+      `Generate "${relativeFolder}/modelBuilders/${o.defineName}.js" complete`,
+    );
+
+    writeFileSync(
+      `${relativeFolder}/services/${o.defineName}.js`,
+      contentService,
+      {
+        coverFile: o.cover || false,
+      },
+    );
+
+    promptSuccess(
+      `Generate "${relativeFolder}/services/${o.defineName}.js" complete`,
+    );
+
+    modelIndex.importList.push({
+      model: o.defineName,
+      functionAlias: `build${toUpperFirst(o.defineName)}Model`,
+    });
+    modelIndex.execList.push(`build${toUpperFirst(o.defineName)}Model`);
+
+    hasModel = true;
+  }
+
+  let modelIndexContent = compile(templateModelIndexContent)({ o: modelIndex });
+
+  if (hasModel) {
+    writeFileSync(
+      `${relativeFolder}/modelBuilders/index.js`,
+      modelIndexContent,
+      {
+        coverFile: true,
+      },
+    );
+  }
+}
+
+module.exports = {
+  generate,
+};
