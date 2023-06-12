@@ -46,7 +46,7 @@ const environmentScript = {
 };
 
 const lernaScript = {
-  'z:lerna:publish': 'lerna publish --yes',
+  'z:lerna:publish': 'lerna publish --yes --otp',
   'z:lerna:bootstrap':
     'npm run z:clean && npm run z:husky:install && git pull && npm run z:install',
 };
