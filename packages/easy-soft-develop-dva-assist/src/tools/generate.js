@@ -11,6 +11,7 @@ const {
   promptEmptyLine,
   isArray,
   checkStringIsEmpty,
+  promptInfo,
 } = require('easy-soft-develop');
 
 let {
@@ -67,7 +68,7 @@ function adjustSource(o) {
 
       promptEmptyLine();
 
-      throw new Error('data has not key "name" or value is empty');
+      throw new Error('data has not key "service" or value is empty');
     }
 
     serviceImportSet.add(serviceFunctionName);
@@ -108,6 +109,7 @@ function adjustSource(o) {
   d.defineName = toLowerFirst(d.name);
   d.pretreatmentList = [...pretreatmentSet];
   d.serviceImportList = [...serviceImportSet];
+  d.cover = d.cover || false;
 
   return d;
 }
@@ -121,7 +123,18 @@ function generate(dataSource, relativeFolder) {
     recursive: true,
   });
 
-  const dataAdjust = dataSource.map((o) => o);
+  promptInfo('model generate config source content');
+
+  console.log(JSON.stringify(dataSource));
+
+  const dataAdjust = dataSource.map((o) => {
+    return adjustSource(o);
+  });
+
+  promptEmptyLine();
+  promptInfo('model generate config adjust content');
+
+  console.log(JSON.stringify(dataAdjust));
 
   const modelIndex = {
     importList: [],
@@ -129,12 +142,12 @@ function generate(dataSource, relativeFolder) {
   };
 
   for (const one of dataAdjust) {
-    const o = adjustSource(one);
+    const o = one;
 
     let contentModel = compile(templateModelContent)({ o });
     let contentService = compile(templateServiceContent)({ o });
 
-    writeFileSync(
+    const modelFileGenerateResult = writeFileSync(
       `${relativeFolder}/modelBuilders/${o.defineName}.js`,
       contentModel,
       {
@@ -142,11 +155,13 @@ function generate(dataSource, relativeFolder) {
       },
     );
 
-    promptSuccess(
-      `Generate "${relativeFolder}/modelBuilders/${o.defineName}.js" complete`,
-    );
+    if (modelFileGenerateResult) {
+      promptSuccess(
+        `Generate "${relativeFolder}/modelBuilders/${o.defineName}.js" complete`,
+      );
+    }
 
-    writeFileSync(
+    const serviceFileGenerateResult = writeFileSync(
       `${relativeFolder}/services/${o.defineName}.js`,
       contentService,
       {
@@ -154,14 +169,17 @@ function generate(dataSource, relativeFolder) {
       },
     );
 
-    promptSuccess(
-      `Generate "${relativeFolder}/services/${o.defineName}.js" complete`,
-    );
+    if (serviceFileGenerateResult) {
+      promptSuccess(
+        `Generate "${relativeFolder}/services/${o.defineName}.js" complete`,
+      );
+    }
 
     modelIndex.importList.push({
       model: o.defineName,
       functionAlias: `build${toUpperFirst(o.defineName)}Model`,
     });
+
     modelIndex.execList.push(`build${toUpperFirst(o.defineName)}Model`);
   }
 

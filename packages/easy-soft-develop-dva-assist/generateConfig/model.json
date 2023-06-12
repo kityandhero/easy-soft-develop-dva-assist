@@ -7,38 +7,34 @@
           "effect": "pageList",
           "service": "pageListData",
           "api": "/test/pageList",
-          "type": "pageList",
-          "cover": false
+          "type": "pageList"
         },
         {
           "effect": "singleList",
           "service": "singleListData",
           "api": "/test/singleList",
-          "type": "singleList",
-          "cover": false
+          "type": "singleList"
         },
         {
           "effect": "get",
           "service": "getData",
           "api": "/test/get",
-          "type": "singleData",
-          "cover": false
+          "type": "singleData"
         },
         {
           "effect": "add",
           "service": "addData",
           "api": "/test/add",
-          "type": "singleData",
-          "cover": false
+          "type": "singleData"
         },
         {
           "effect": "remove",
           "service": "removeData",
           "api": "/test/remove",
-          "type": "singleData",
-          "cover": false
+          "type": "singleData"
         }
-      ]
+      ],
+      "cover": false
     }
   ]
 }
