@@ -10,12 +10,12 @@
     },
     "version": {
       "conventionalCommits": true,
-      "message": "chore(lerna-easy-soft-develop-dva-assist): version",
+      "message": "chore(easy-soft-develop-dva-assist): version",
       "changelogPreset": "conventional-changelog-conventionalcommits"
     },
     "publish": {
       "conventionalCommits": true,
-      "message": "chore(lerna-easy-soft-develop-dva-assist): publish",
+      "message": "chore(easy-soft-develop-dva-assist): publish",
       "changelogPreset": "conventional-changelog-conventionalcommits"
     }
   }
