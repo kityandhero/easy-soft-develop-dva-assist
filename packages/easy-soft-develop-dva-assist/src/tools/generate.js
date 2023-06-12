@@ -114,6 +114,11 @@ function adjustSource(o) {
   return d;
 }
 
+/**
+ * generate
+ * @param {*} dataSource dataSource
+ * @param {*} relativeFolder relativeFolder
+ */
 function generate(dataSource, relativeFolder) {
   mkdirSync(`${relativeFolder}/modelBuilders`, {
     recursive: true,
