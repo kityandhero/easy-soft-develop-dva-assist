@@ -35,7 +35,7 @@
     "z:install.global.develop.dependence": "node ./develop/assists/install.global.develop.dependence",
     "postz:install.global.develop.dependence": "npm run z:install",
     "z:lerna:bootstrap": "npm run z:clean && npm run z:husky:install && git pull && npm run z:install",
-    "z:lerna:publish": "lerna publish --yes --otp",
+    "z:lerna:publish": "lerna publish --yes",
     "z:lint:staged": "npx lint-staged",
     "z:lint:staged:quiet": "npx lint-staged --quiet",
     "z:prettier:format:all": "npx prettier --write .",
