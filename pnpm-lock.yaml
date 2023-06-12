@@ -25,7 +25,7 @@ importers:
       conventional-changelog-conventionalcommits: ^6.0.0
       cross-env: ^7.0.3
       documentation: ^14.0.2
-      easy-soft-develop: ^2.1.17
+      easy-soft-develop: ^2.1.18
       eslint: ^8.42.0
       eslint-config-airbnb: ^19.0.4
       eslint-config-airbnb-typescript: ^17.0.0
@@ -74,7 +74,7 @@ importers:
       conventional-changelog-conventionalcommits: 6.0.0
       cross-env: 7.0.3
       documentation: 14.0.2
-      easy-soft-develop: 2.1.17
+      easy-soft-develop: 2.1.18
       eslint: 8.42.0
       eslint-config-airbnb: 19.0.4_73sbnz5dtee5vgkzyutel3qqoe
       eslint-config-airbnb-typescript: 17.0.0_wvreivwdxhtvuyvy5c4eyucazi
@@ -126,7 +126,7 @@ importers:
       conventional-changelog-conventionalcommits: ^6.0.0
       cross-env: ^7.0.3
       documentation: ^14.0.2
-      easy-soft-develop: ^2.1.17
+      easy-soft-develop: ^2.1.18
       ejs: ^3.1.9
       eslint: ^8.42.0
       eslint-config-airbnb: ^19.0.4
@@ -180,7 +180,7 @@ importers:
       conventional-changelog-conventionalcommits: 6.0.0
       cross-env: 7.0.3
       documentation: 14.0.2
-      easy-soft-develop: 2.1.17
+      easy-soft-develop: 2.1.18
       eslint: 8.42.0
       eslint-config-airbnb: 19.0.4_73sbnz5dtee5vgkzyutel3qqoe
       eslint-config-airbnb-typescript: 17.0.0_wvreivwdxhtvuyvy5c4eyucazi
@@ -4363,8 +4363,8 @@ packages:
   /eastasianwidth/0.2.0:
     resolution: {integrity: sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==}
 
-  /easy-soft-develop/2.1.17:
-    resolution: {integrity: sha512-X8i/iHFdu1URV7Wiu2hXYTQ/tf+jQ/KMx+lo2ReUfIPJsZZB325HSHqbLgoRbOBZ+w0NwRYi8ZiWNSRPq/RPPQ==}
+  /easy-soft-develop/2.1.18:
+    resolution: {integrity: sha512-vkTSf5Bpctrqv73FznlMF8WVgiDeebU8SfE7HYWK+nMre3tGoKJfDMnLV8v9KtxrjP1ZJYKc82YBp/N/2Ffjxg==}
     hasBin: true
     dependencies:
       commander: 10.0.1
