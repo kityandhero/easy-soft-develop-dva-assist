@@ -24,10 +24,22 @@ export function buildModel() {
     },
 
     effects: {<% o.apis.forEach(function(b){%>
-      *<%= b.effect %>({ payload, alias }, { call, put }) {
+      *<%= b.effect %>(
+        {
+          payload,
+          alias,
+          pretreatmentSuccessCallback,
+          pretreatmentFailCallback,
+        },
+        { call, put },
+      ) {
         const response = yield call(<%= b.service %>, payload);
 
-        const dataAdjust = <%= b.pretreatment %>({ source: response });
+        const dataAdjust = <%= b.pretreatment %>({
+          source: response,
+          successCallback: pretreatmentSuccessCallback || null,
+          failCallback: pretreatmentFailCallback || null,
+        });
 
         yield put({
           type: reducerNameCollection.reducerRemoteData,
