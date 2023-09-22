@@ -62,9 +62,11 @@ export function buildModel() {
 const templateServiceContent = `
 import { request } from 'easy-soft-utility';
 <% o.apis.forEach(function(b){%>
+export const <%= b.service %>ApiAddress = '<%= b.api %>';
+
 export async function <%= b.service %>(parameters) {
   return request({
-    api: '<%= b.api %>',
+    api: <%= b.service %>ApiAddress,
     params: parameters,
   });
 }

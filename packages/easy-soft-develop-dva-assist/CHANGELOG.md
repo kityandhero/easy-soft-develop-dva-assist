@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.0.22
+
+### Patch Changes
+
+- update
+
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
 ## [1.0.21](https://github.com/kityandhero/easy-soft-develop-dva-assist/compare/easy-soft-develop-dva-assist@1.0.20...easy-soft-develop-dva-assist@1.0.21) (2023-06-14)
