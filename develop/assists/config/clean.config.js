@@ -4,7 +4,12 @@
 
 const cleanCommand = '';
 
-const cleanCollection = [];
+const cleanCollection = [
+  'yarn-error.log',
+  'yarn.lock',
+  'package-lock.json',
+  'pnpm-lock.yaml',
+];
 
 module.exports = {
   cleanCommand,
