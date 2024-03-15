@@ -39,8 +39,8 @@ importers:
         specifier: ^2.27.1
         version: 2.27.1
       '@commitlint/cli':
-        specifier: ^19.1.0
-        version: 19.1.0(@types/node@20.11.27)(typescript@5.4.2)
+        specifier: ^19.2.0
+        version: 19.2.0(@types/node@20.11.27)(typescript@5.4.2)
       '@commitlint/config-conventional':
         specifier: ^19.1.0
         version: 19.1.0
@@ -214,8 +214,8 @@ importers:
         specifier: ^2.27.1
         version: 2.27.1
       '@commitlint/cli':
-        specifier: ^19.1.0
-        version: 19.1.0(@types/node@20.11.27)(typescript@5.4.2)
+        specifier: ^19.2.0
+        version: 19.2.0(@types/node@20.11.27)(typescript@5.4.2)
       '@commitlint/config-conventional':
         specifier: ^19.1.0
         version: 19.1.0
@@ -1884,15 +1884,15 @@ packages:
     dev: true
     optional: true
 
-  /@commitlint/cli@19.1.0(@types/node@20.11.27)(typescript@5.4.2):
-    resolution: {integrity: sha512-SYGm8HGbVzrlSYeB6oo6pG1Ec6bOMJcDsXgNGa4vgZQsPj6nJkcbTWlIRmtmIk0tHi0d5sCljGuQ+g/0NCPv7w==}
+  /@commitlint/cli@19.2.0(@types/node@20.11.27)(typescript@5.4.2):
+    resolution: {integrity: sha512-8XnQDMyQR+1/ldbmIyhonvnDS2enEw48Wompo/967fsEvy9Vj5/JbDutzmSBKxANWDVeEbR9QQm0yHpw6ArrFw==}
     engines: {node: '>=v18'}
     hasBin: true
     dependencies:
       '@commitlint/format': 19.0.3
       '@commitlint/lint': 19.1.0
-      '@commitlint/load': 19.1.0(@types/node@20.11.27)(typescript@5.4.2)
-      '@commitlint/read': 19.0.3
+      '@commitlint/load': 19.2.0(@types/node@20.11.27)(typescript@5.4.2)
+      '@commitlint/read': 19.2.0
       '@commitlint/types': 19.0.3
       execa: 8.0.1
       yargs: 17.7.2
@@ -1969,8 +1969,8 @@ packages:
       '@commitlint/types': 19.0.3
     dev: true
 
-  /@commitlint/load@19.1.0(@types/node@20.11.27)(typescript@5.4.2):
-    resolution: {integrity: sha512-rWqnvNDpeshX8JfUC/qjpDkQB78qF+4uHcJmIRJMwvlj6zWce08SP/TPKN3GlNKgXhAawwcAPxXL9qOTTdiOBA==}
+  /@commitlint/load@19.2.0(@types/node@20.11.27)(typescript@5.4.2):
+    resolution: {integrity: sha512-XvxxLJTKqZojCxaBQ7u92qQLFMMZc4+p9qrIq/9kJDy8DOrEa7P1yx7Tjdc2u2JxIalqT4KOGraVgCE7eCYJyQ==}
     engines: {node: '>=v18'}
     dependencies:
       '@commitlint/config-validator': 19.0.3
@@ -1978,8 +1978,8 @@ packages:
       '@commitlint/resolve-extends': 19.1.0
       '@commitlint/types': 19.0.3
       chalk: 5.3.0
-      cosmiconfig: 8.3.6(typescript@5.4.2)
-      cosmiconfig-typescript-loader: 5.0.0(@types/node@20.11.27)(cosmiconfig@8.3.6)(typescript@5.4.2)
+      cosmiconfig: 9.0.0(typescript@5.4.2)
+      cosmiconfig-typescript-loader: 5.0.0(@types/node@20.11.27)(cosmiconfig@9.0.0)(typescript@5.4.2)
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
       lodash.uniq: 4.5.0
@@ -2002,12 +2002,13 @@ packages:
       conventional-commits-parser: 5.0.0
     dev: true
 
-  /@commitlint/read@19.0.3:
-    resolution: {integrity: sha512-b5AflTyAXkUx5qKw4TkjjcOccXZHql3JqMi522knTQktq2AubKXFz60Sws+K4FsefwPws6fGz9mqiI/NvsvxFA==}
+  /@commitlint/read@19.2.0:
+    resolution: {integrity: sha512-HlGeEd/jyp2a5Fb9mvtsaDm5hFCmj80dJYjLQkpG3DzWneWBc37YU3kM8Za1D1HUazZaTkdsWq73M3XDE4CvCA==}
     engines: {node: '>=v18'}
     dependencies:
       '@commitlint/top-level': 19.0.0
       '@commitlint/types': 19.0.3
+      execa: 8.0.1
       git-raw-commits: 4.0.0
       minimist: 1.2.8
     dev: true
@@ -3810,8 +3811,8 @@ packages:
     resolution: {integrity: sha512-vyL2OymJxmarO8gxMr0mhChsO9QGwhynfuu4+MHTAW6czfq9humCB7rKpUjDd9YUiDPU4mzpyupFSvOClAwbmQ==}
     dev: true
 
-  /binary-extensions@2.2.0:
-    resolution: {integrity: sha512-jDctJ/IVQbZoJykoeHbhXpOlNBqGNcwXJKJog42E5HDPUwQTSdjCHdihjj0DlnheQ7blbT6dHOafNAiS8ooQKA==}
+  /binary-extensions@2.3.0:
+    resolution: {integrity: sha512-Ceh+7ox5qe7LJuLHoY0feh3pHuUDHAcRUeyL2VYghZwfpkNIy/+8Ocg0a3UuSoYzavmylwuLWQOf3hl0jjMMIw==}
     engines: {node: '>=8'}
     dev: true
 
@@ -3874,7 +3875,7 @@ packages:
     hasBin: true
     dependencies:
       caniuse-lite: 1.0.30001597
-      electron-to-chromium: 1.4.705
+      electron-to-chromium: 1.4.707
       node-releases: 2.0.14
       update-browserslist-db: 1.0.13(browserslist@4.23.0)
     dev: true
@@ -4416,7 +4417,7 @@ packages:
     resolution: {integrity: sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ==}
     dev: true
 
-  /cosmiconfig-typescript-loader@5.0.0(@types/node@20.11.27)(cosmiconfig@8.3.6)(typescript@5.4.2):
+  /cosmiconfig-typescript-loader@5.0.0(@types/node@20.11.27)(cosmiconfig@9.0.0)(typescript@5.4.2):
     resolution: {integrity: sha512-+8cK7jRAReYkMwMiG+bxhcNKiHJDM6bR9FD/nGBXOWdMLuYawjF5cGrtLilJ+LGd3ZjCXnJjR5DkfWPoIVlqJA==}
     engines: {node: '>=v16'}
     peerDependencies:
@@ -4425,24 +4426,8 @@ packages:
       typescript: '>=4'
     dependencies:
       '@types/node': 20.11.27
-      cosmiconfig: 8.3.6(typescript@5.4.2)
+      cosmiconfig: 9.0.0(typescript@5.4.2)
       jiti: 1.21.0
-      typescript: 5.4.2
-    dev: true
-
-  /cosmiconfig@8.3.6(typescript@5.4.2):
-    resolution: {integrity: sha512-kcZ6+W5QzcJ3P1Mt+83OUv/oHFqZHIx8DuxG6eZ5RGMERoLqp4BuGjhHLYGK+Kf5XVkQvqBSmAy/nGWN3qDgEA==}
-    engines: {node: '>=14'}
-    peerDependencies:
-      typescript: '>=4.9.5'
-    peerDependenciesMeta:
-      typescript:
-        optional: true
-    dependencies:
-      import-fresh: 3.3.0
-      js-yaml: 4.1.0
-      parse-json: 5.2.0
-      path-type: 4.0.0
       typescript: 5.4.2
     dev: true
 
@@ -4570,7 +4555,7 @@ packages:
       longest: 2.0.1
       word-wrap: 1.2.5
     optionalDependencies:
-      '@commitlint/load': 19.1.0(@types/node@20.11.27)(typescript@5.4.2)
+      '@commitlint/load': 19.2.0(@types/node@20.11.27)(typescript@5.4.2)
     transitivePeerDependencies:
       - '@types/node'
       - typescript
@@ -4974,8 +4959,8 @@ packages:
       jake: 10.8.7
     dev: false
 
-  /electron-to-chromium@1.4.705:
-    resolution: {integrity: sha512-LKqhpwJCLhYId2VVwEzFXWrqQI5n5zBppz1W9ehhTlfYU8CUUW6kClbN8LHF/v7flMgRdETS772nqywJ+ckVAw==}
+  /electron-to-chromium@1.4.707:
+    resolution: {integrity: sha512-qRq74Mo7ChePOU6GHdfAJ0NREXU8vQTlVlfWz3wNygFay6xrd/fY2J7oGHwrhFeU30OVctGLdTh/FcnokTWpng==}
     dev: true
 
   /emittery@0.13.1:
@@ -6933,7 +6918,7 @@ packages:
     resolution: {integrity: sha512-ZMERYes6pDydyuGidse7OsHxtbI7WVeUEozgR/g7rd0xUimYNlvZRE/K2MgZTjWy725IfelLeVcEM97mmtRGXw==}
     engines: {node: '>=8'}
     dependencies:
-      binary-extensions: 2.2.0
+      binary-extensions: 2.3.0
     dev: true
 
   /is-boolean-object@1.1.2:

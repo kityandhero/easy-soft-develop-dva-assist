@@ -1,6 +1,6 @@
 {
   "name": "easy-soft-develop-dva-assist",
-  "version": "1.0.41",
+  "version": "1.0.42",
   "author": "",
   "main": "src/index.js",
   "types": "types/index.d.ts",
@@ -62,7 +62,7 @@
     "@babel/preset-react": "^7.23.3",
     "@babel/runtime": "^7.24.0",
     "@changesets/cli": "^2.27.1",
-    "@commitlint/cli": "^19.1.0",
+    "@commitlint/cli": "^19.2.0",
     "@commitlint/config-conventional": "^19.1.0",
     "@commitlint/config-pnpm-scopes": "^19.1.0",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.11",
