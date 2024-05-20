@@ -3,12 +3,8 @@
 /* eslint-disable unicorn/prefer-module */
 /* eslint-disable no-useless-escape */
 
-function buildConfig(api) {
-  api.cache(true);
-
-  return {
-    babelrcRoots: ['.'],
-  };
-}
-
-module.exports = buildConfig;
+module.exports = {
+  generalConfig: {
+    reject: ['eslint', 'eslint-plugin-unicorn'],
+  },
+};
