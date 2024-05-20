@@ -1,6 +1,6 @@
 {
   "name": "easy-soft-develop-dva-assist",
-  "version": "1.0.48",
+  "version": "1.0.49",
   "author": "",
   "main": "src/index.js",
   "types": "types/index.d.ts",
@@ -19,7 +19,7 @@
     "precommit": "npm run z:lint:staged:quiet",
     "test:bin:create-model": "node ./bin/cli.js create-model --dataPath ./generateConfig/model.json --relativeFolder ./other/generateResult",
     "z:auto:adjust:file": "npm run z:tsc:build",
-    "prez:documentation:generate": "npx rimraf ./docs && npm run z:documentation:lint",
+    "prez:documentation:generate": "npx easy-soft-develop rimraf ./docs && npm run z:documentation:lint",
     "z:documentation:generate": "npx documentation build src/** -f html --github -o docs",
     "z:documentation:lint": "npx documentation lint src/**",
     "z:lint:file:all": "npm run z:lint:script:all && npm run z:lint:style:all",
