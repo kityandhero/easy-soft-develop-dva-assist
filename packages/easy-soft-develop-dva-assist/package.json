@@ -1,6 +1,6 @@
 {
   "name": "easy-soft-develop-dva-assist",
-  "version": "1.0.51",
+  "version": "1.0.52",
   "author": "",
   "main": "src/index.js",
   "types": "types/index.d.ts",
@@ -75,7 +75,7 @@
     "cross-env": "^7.0.3",
     "cz-git": "^1.9.2",
     "documentation": "^14.0.3",
-    "easy-soft-develop": "^2.1.169",
+    "easy-soft-develop": "^2.1.171",
     "eslint": "^8.57.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-typescript": "^18.0.0",
