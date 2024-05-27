@@ -1,6 +1,6 @@
 {
   "name": "easy-soft-develop-dva-assist",
-  "version": "1.0.50",
+  "version": "1.0.51",
   "author": "",
   "main": "src/index.js",
   "types": "types/index.d.ts",
@@ -73,7 +73,7 @@
     "commitizen": "^4.3.0",
     "conventional-changelog-conventionalcommits": "^8.0.0",
     "cross-env": "^7.0.3",
-    "cz-git": "^1.9.1",
+    "cz-git": "^1.9.2",
     "documentation": "^14.0.3",
     "easy-soft-develop": "^2.1.169",
     "eslint": "^8.57.0",
