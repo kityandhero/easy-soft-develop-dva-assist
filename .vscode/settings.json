@@ -1,14 +1,15 @@
 {
   "cSpell.words": [
     "conventionalcommits",
+    "docdash",
+    "lintstagedrc",
     "packagejson",
     "pmmmwh",
-    "postz:cz",
     "postz",
+    "postz:cz",
     "precommit",
-    "prez:cz",
     "prez",
-    "lintstagedrc"
+    "prez:cz"
   ],
   "eslint.packageManager": "pnpm",
   "git.ignoreLimitWarning": true,
