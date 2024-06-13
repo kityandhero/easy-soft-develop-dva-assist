@@ -15,7 +15,7 @@ const { generate } = require('../tools/generate');
 
 exports.run = function (s, o) {
   const {
-    _optionValues: { dataPath = '', relativeFolder = '.' },
+    _optionValues: { dataPath = '', relativeFolder = '.', modelFolder = '' },
   } = o;
 
   if (checkStringIsEmpty(dataPath)) {
@@ -30,7 +30,7 @@ exports.run = function (s, o) {
     if (Array.isArray(data.list)) {
       promptInfo('File will generate, please wait a moment');
 
-      generate(data.list, relativeFolder);
+      generate(data.list, relativeFolder, modelFolder);
 
       const cmdEslint = `npx eslint --fix --cache --ext .js,.jsx,.ts,.tsx ${relativeFolder}/`;
 

@@ -13,7 +13,7 @@ import {
 
 import {<% o.serviceImportList.forEach(function(b){%>
   <%- b %>,<% })%>
-} from '../services/<%= o.defineName %>';
+} from '../../services/<%= o.defineName %>';
 
 export function buildModel() {
   return {
@@ -73,20 +73,16 @@ export async function <%= b.service %>(parameters) {
 <% })%>
 `;
 
-const templateModelIndexContent = `
-import { appendExtraBuilder } from 'easy-soft-utility';
-<% o.importList.forEach(function(b){%>
+const templateModelIndexContent = `<% o.importList.forEach(function(b){%>
 import { buildModel as <%= b.functionAlias %> } from './<%= b.model %>';
 <% })%>
-
-function collectModelBuilder() {<% o.importList.forEach(function(b){%>
-  appendExtraBuilder(<%= b.functionAlias %>);
+export function listModelBuilder() {
+  const list = [];
+  <% o.importList.forEach(function(b){%>
+  list.push(<%= b.functionAlias %>);
 <% })%>
+  return list;
 }
-
-collectModelBuilder();
-
-export function prepareModel() {}
 `;
 
 module.exports = {

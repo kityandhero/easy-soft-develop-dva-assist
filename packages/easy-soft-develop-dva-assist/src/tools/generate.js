@@ -12,7 +12,11 @@ const {
   isArray,
   checkStringIsEmpty,
   promptInfo,
+  promptTip,
+  promptGreen,
 } = require('easy-soft-develop');
+
+const line = '---------------------------------------';
 
 let {
   templateModelContent,
@@ -122,27 +126,37 @@ function adjustSource(o) {
  * @param {*} dataSource data source
  * @param {*} relativeFolder relative folder
  */
-function generate(dataSource, relativeFolder) {
-  mkdirSync(`${relativeFolder}/modelBuilders`, {
-    recursive: true,
-  });
+function generate(dataSource, relativeFolder, modelFolder) {
+  promptGreen(line, false);
+  promptTip('relativeFolder', relativeFolder);
+  promptTip('modelFolder', modelFolder);
+  promptTip('dataSource', 'view the following data');
+
+  promptEmptyLine();
+
+  console.log(JSON.stringify(dataSource));
+  promptGreen(line, false);
+
+  mkdirSync(
+    `${relativeFolder}/modelBuilders/${checkStringIsEmpty(modelFolder) ? '' : modelFolder}`,
+    {
+      recursive: true,
+    },
+  );
 
   mkdirSync(`${relativeFolder}/services`, {
     recursive: true,
   });
 
-  promptInfo('model generate config source content');
-
-  console.log(JSON.stringify(dataSource));
-
   const dataAdjust = dataSource.map((o) => {
     return adjustSource(o);
   });
 
-  promptEmptyLine();
   promptInfo('model generate config adjust content');
 
   console.log(JSON.stringify(dataAdjust));
+
+  promptGreen(line, false);
 
   const modelIndex = {
     importList: [],

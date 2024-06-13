@@ -20,8 +20,12 @@ program
   .description('generate model and service file from template')
   .option('--dataPath <string>', 'data json source file path')
   .option(
-    '--relativeFolder <bool>',
+    '--relativeFolder <string>',
     'file will be generate by the relative folder path, default is "."',
+  )
+  .option(
+    '--modelFolder <string>',
+    'model file will be generate in the folder path, default is ""',
   )
   .action((a, o) => {
     generator.run(a, o);
