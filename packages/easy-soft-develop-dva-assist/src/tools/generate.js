@@ -137,12 +137,13 @@ function generate(dataSource, relativeFolder, modelFolder) {
   console.log(JSON.stringify(dataSource));
   promptGreen(line, false);
 
-  mkdirSync(
-    `${relativeFolder}/modelBuilders/${checkStringIsEmpty(modelFolder) ? '' : modelFolder}`,
-    {
-      recursive: true,
-    },
-  );
+  const modelFolderAdjust = checkStringIsEmpty(modelFolder)
+    ? ''
+    : `/${modelFolder}`;
+
+  mkdirSync(`${relativeFolder}/modelBuilders${modelFolderAdjust}`, {
+    recursive: true,
+  });
 
   mkdirSync(`${relativeFolder}/services`, {
     recursive: true,
@@ -170,7 +171,7 @@ function generate(dataSource, relativeFolder, modelFolder) {
     let contentService = compile(templateServiceContent)({ o });
 
     const modelFileGenerateResult = writeFileSync(
-      `${relativeFolder}/modelBuilders/${o.defineName}.js`,
+      `${relativeFolder}/modelBuilders${modelFolderAdjust}/${o.defineName}.js`,
       contentModel,
       {
         coverFile: o.cover || false,
@@ -179,7 +180,7 @@ function generate(dataSource, relativeFolder, modelFolder) {
 
     if (modelFileGenerateResult) {
       promptSuccess(
-        `Generate "${relativeFolder}/modelBuilders/${o.defineName}.js" complete`,
+        `Generate "${relativeFolder}/modelBuilders${modelFolderAdjust}/${o.defineName}.js" complete`,
       );
     }
 
@@ -207,11 +208,17 @@ function generate(dataSource, relativeFolder, modelFolder) {
 
   let modelIndexContent = compile(templateModelIndexContent)({ o: modelIndex });
 
-  writeFileSync(`${relativeFolder}/modelBuilders/index.js`, modelIndexContent, {
-    coverFile: true,
-  });
+  writeFileSync(
+    `${relativeFolder}/modelBuilders${modelFolderAdjust}/index.js`,
+    modelIndexContent,
+    {
+      coverFile: true,
+    },
+  );
 
-  promptSuccess(`Generate "${relativeFolder}/modelBuilders/index.js" complete`);
+  promptSuccess(
+    `Generate "${relativeFolder}/modelBuilders${modelFolderAdjust}/index.js" complete`,
+  );
 }
 
 module.exports = {
