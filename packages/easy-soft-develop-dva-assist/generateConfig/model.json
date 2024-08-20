@@ -34,7 +34,7 @@
           "type": "singleData"
         }
       ],
-      "cover": false
+      "cover": true
     }
   ]
 }

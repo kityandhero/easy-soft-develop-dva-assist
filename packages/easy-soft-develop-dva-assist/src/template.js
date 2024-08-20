@@ -15,6 +15,10 @@ import {<% o.serviceImportList.forEach(function(b){%>
   <%- b %>,<% })%>
 } from '../../services/<%= o.defineName %>';
 
+export const <%= o.defineName %>TypeCollection = {<% o.apis.forEach(function(b){%>
+  <%= b.effect %>: "<%= o.defineName %>/<%= b.effect %>",<% })%>
+}
+
 export function buildModel() {
   return {
     namespace: '<%= o.defineName %>',
@@ -74,8 +78,13 @@ export async function <%= b.service %>(parameters) {
 `;
 
 const templateModelIndexContent = `<% o.importList.forEach(function(b){%>
-import { buildModel as <%= b.functionAlias %> } from './<%= b.model %>';
+import { buildModel as <%= b.functionAlias %>, <%= b.model %>TypeCollection } from './<%= b.model %>';
 <% })%>
+
+export const modelTypeCollection = {<% o.importList.forEach(function(b){%>
+  <%= b.model %>TypeCollection,<% })%>
+}
+
 export function listModelBuilder() {
   const list = [];
   <% o.importList.forEach(function(b){%>

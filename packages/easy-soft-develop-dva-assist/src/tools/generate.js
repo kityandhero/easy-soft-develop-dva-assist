@@ -199,6 +199,7 @@ function generate(dataSource, relativeFolder, modelFolder) {
     }
 
     modelIndex.importList.push({
+      folder: modelFolder,
       model: o.defineName,
       functionAlias: `build${toUpperFirst(o.defineName)}Model`,
     });
