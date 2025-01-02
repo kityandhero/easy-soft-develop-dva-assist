@@ -1,6 +1,6 @@
 {
   "name": "easy-soft-develop-dva-assist",
-  "version": "1.0.73",
+  "version": "1.0.74",
   "author": "",
   "main": "src/index.js",
   "types": "types/index.d.ts",
@@ -67,8 +67,8 @@
     "@commitlint/config-pnpm-scopes": "^19.5.0",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.15",
     "@types/jest": "^29.5.14",
-    "@types/node": "^22.10.2",
-    "@typescript-eslint/parser": "^8.18.2",
+    "@types/node": "^22.10.3",
+    "@typescript-eslint/parser": "^8.19.0",
     "babel-jest": "^29.7.0",
     "commitizen": "^4.3.1",
     "conventional-changelog-conventionalcommits": "^8.0.0",
