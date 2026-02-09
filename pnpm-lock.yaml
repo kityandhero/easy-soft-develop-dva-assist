@@ -84,8 +84,8 @@ importers:
         specifier: ^2.0.2
         version: 2.0.2
       easy-soft-develop:
-        specifier: ^2.2.19
-        version: 2.2.19
+        specifier: ^2.2.24
+        version: 2.2.24
       eslint:
         specifier: ^8.57.0
         version: 8.57.1
@@ -271,8 +271,8 @@ importers:
         specifier: ^2.0.2
         version: 2.0.2
       easy-soft-develop:
-        specifier: ^2.2.19
-        version: 2.2.19
+        specifier: ^2.2.24
+        version: 2.2.24
       eslint:
         specifier: ^8.57.0
         version: 8.57.1
@@ -2448,8 +2448,8 @@ packages:
   eastasianwidth@0.2.0:
     resolution: {integrity: sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==}
 
-  easy-soft-develop@2.2.19:
-    resolution: {integrity: sha512-afJbs6bElGdLtR5ZOE1WVzq6Ab/nrvkWDPrIPor+rMHNjcZ2excJ8YuqaqMAmFW3tzWy4LmsytQ/jzM/UNWGbg==}
+  easy-soft-develop@2.2.24:
+    resolution: {integrity: sha512-FqAKa/hdTWe3OwZTC/mBtYqZBDyAo6bgBm+KwdL6tRVCw9PHB/MUGGdLmVgcy0UxK5X69sXP+j0KOmcUkidTHQ==}
     hasBin: true
 
   ejs@4.0.1:
@@ -7871,7 +7871,7 @@ snapshots:
 
   eastasianwidth@0.2.0: {}
 
-  easy-soft-develop@2.2.19:
+  easy-soft-develop@2.2.24:
     dependencies:
       commander: 14.0.3
       cross-zip: 4.0.1
