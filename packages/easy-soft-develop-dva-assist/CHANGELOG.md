@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.0.115
+
+### Patch Changes
+
+- update dependences
+
 ## 1.0.114
 
 ### Patch Changes
